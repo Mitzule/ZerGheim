@@ -1,15 +1,15 @@
-lista=[["player1",100,10], ["player2",100,8], ["player3",100,12], ["player2",100,5]]
-print("Players Avaible (Name/Hp/Atk): ",lista)
-a=int(input("Chose the player from 0 to 3: "))
-b=int(input("Chose the player from 0 to 3: "))
-print("First Fight between player",a+1,"and player",b+1)
-listaA=lista[a]
-listaB=lista[b]
+lista=[["warrior",100,10,10], ["mage",100,8,15], ["rogue",100,12,8], ["paladin",100,5,20]]
+print("Players Avaible (Name/Hp/Atk/Stamina): ",lista)
+first=int(input("Chose the player from 0 to 3: "))
+second=int(input("Chose the player from 0 to 3: "))
+player1=lista[first]
+player2=lista[second]
+print("First Fight between player:",player1[0],"and player:",player2[0])
 #player from listB starts first
-while listaA[1]>0 and listaB[1]>0:
-    listaA[1]-=listaB[2]
-    listaB[1]-=listaA[2]
-if listaA[1]>listaB[1]:
-    print("Winner is:",listaA[0])
+while player1[1]>0 and player2[1]>0:
+    player1[1]-=player2[2]
+    player2[1]-=player1[2]
+if player1[1]>player2[1]:
+    print("Winner is:",player1[0])
 else:
-    print("Winner is:",listaB[0])
+    print("Winner is:",player2[0])
